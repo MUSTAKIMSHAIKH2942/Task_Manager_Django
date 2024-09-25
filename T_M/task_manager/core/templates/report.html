@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>User Task Report</h2>
+<table>
+    <tr>
+        <th>User</th>
+        <th>Completed on Time</th>
+        <th>Completed Late</th>
+        <th>Not Completed</th>
+    </tr>
+    {% for user, metrics in user_metrics.items %}
+    <tr>
+        <td>{{ user }}</td>
+        <td>{{ metrics.on_time }}</td>
+        <td>{{ metrics.late }}</td>
+        <td>{{ metrics.not_completed }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
